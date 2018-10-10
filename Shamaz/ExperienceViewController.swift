@@ -10,19 +10,33 @@ import UIKit
 
 class ExperienceViewController: UIViewController {
     
-    let selectedExperience : String = ""
+    var selectedTimeline = ""
+    let experienceBankInstance = ExperienceBank()
+    let randomIndex = Int.random(in: 0...3)
     
-    @IBOutlet weak var selectedExperienceLabel: UILabel!
+    
+    @IBOutlet weak var selectedTimelineLabel: UILabel!
     @IBOutlet weak var experienceLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        selectedTimelineLabel.text = "Share your \(selectedTimeline) experience!"
+        generateExperience()
+        
 
     
     }
     
     @IBAction func dismissy(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    func generateExperience() {
+        if selectedTimeline == "future" {
+            experienceLabel.text = experienceBankInstance.futureExperience[randomIndex]
+        } else if selectedTimeline == "past" {
+            experienceLabel.text = experienceBankInstance.pastExperience[randomIndex]
+        }
     }
     
 

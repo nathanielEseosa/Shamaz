@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Experience {
+struct ExperienceBank {
     
     let pastExperience : [String] = ["Describe your day 2 days ago",
                                      "Where did you spend Christmas last year?",
@@ -16,7 +16,7 @@ struct Experience {
                                      "What was your favourtite TV Show growing up?"]
     
     
-    let futureExpereince : [String] = ["What would you like to be doing in a month from now?",
+    let futureExperience : [String] = ["What would you like to be doing in a month from now?",
                                        "What are you up to next weekend?",
                                        "Where will you spend your next vacation?",
                                        "What are you planning to do tomorrow?"]

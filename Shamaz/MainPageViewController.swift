@@ -9,6 +9,8 @@
 import UIKit
 
 class MainPageViewController: UIViewController {
+    
+    var selectedTimeline = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,18 +18,27 @@ class MainPageViewController: UIViewController {
     }
     
     
-    @IBAction func pastButtonPressed() {
+    @IBAction func timelineButtonPressed(_ sender: UIButton) {
+        if sender.tag == 1 {
+            selectedTimeline = "future"
+        } else if sender.tag == 2 {
+            selectedTimeline = "past"
+        }
         performSegue(withIdentifier: "segueToExperienceVC", sender: self)
     }
-    
-    @IBAction func futureButtonPressed() {
-        performSegue(withIdentifier: "segueToExperienceVC", sender: self)
-    }
+  
 
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "segueToExperienceVC" {
+            let destinationVC = segue.destination as! ExperienceViewController
+            
+            destinationVC.selectedTimeline = selectedTimeline
+        }
+    }
 
 }
 
-func selectedExperience() {
-    
-    
-}
+
+
+
