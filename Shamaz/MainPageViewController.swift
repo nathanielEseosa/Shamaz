@@ -8,10 +8,21 @@
 
 import UIKit
 
+
+var playerLabelText = "Player , choose a timeline:"
+
 class MainPageViewController: UIViewController {
     
     var selectedTimeline = ""
+    
 
+    @IBOutlet weak var playerLabel: UILabel!
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        playerLabel.text = playerLabelText
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -28,7 +39,6 @@ class MainPageViewController: UIViewController {
     }
   
 
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "segueToExperienceVC" {
             let destinationVC = segue.destination as! ExperienceViewController

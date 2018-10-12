@@ -8,12 +8,17 @@
 
 import UIKit
 
+
+
 class ExperienceViewController: UIViewController {
     
     var selectedTimeline = ""
     let experienceBankInstance = ExperienceBank()
     let randomIndex = Int.random(in: 0...3)
     
+
+    
+
     
     @IBOutlet weak var selectedTimelineLabel: UILabel!
     @IBOutlet weak var experienceLabel: UILabel!
@@ -23,12 +28,13 @@ class ExperienceViewController: UIViewController {
         selectedTimelineLabel.text = "Share your \(selectedTimeline) experience!"
         generateExperience()
         
-
-    
     }
     
     @IBAction func dismissy(_ sender: UIButton) {
+        let randomIndexForPlayer = Int.random(in: 1...10)
+        playerLabelText = "Player \(randomIndexForPlayer), choose a timeline:"
         self.dismiss(animated: true, completion: nil)
+        
     }
     
     func generateExperience() {
