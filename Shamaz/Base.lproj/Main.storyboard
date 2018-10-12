@@ -71,7 +71,7 @@
                     <navigationItem key="navigationItem" id="9A1-Ui-s16"/>
                     <connections>
                         <outlet property="playerNumbersTextField" destination="kmu-1h-wMM" id="Sr3-Bj-B4t"/>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="segueToMainVC" id="SPA-7g-dpe"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="segueForwardToMainPageVC" id="SPA-7g-dpe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IWU-Qk-C5w" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -220,11 +220,12 @@
                     <connections>
                         <outlet property="experienceLabel" destination="WcQ-ah-CkA" id="dON-cI-6o7"/>
                         <outlet property="selectedTimelineLabel" destination="eyz-nP-Xnj" id="UPy-iY-LvT"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="segueBackwardToMainPageVC" id="hnB-Hl-15p"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vfp-1o-XmC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3664.8000000000002" y="59.11330049261084"/>
+            <point key="canvasLocation" x="3921" y="58"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="NPC-Xs-Pqp">
@@ -254,4 +255,7 @@
         <image name="pastFutureSignsBW1" width="541" height="593"/>
         <image name="pastSignBW1" width="354" height="106"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="hnB-Hl-15p"/>
+    </inferredMetricsTieBreakers>
 </document>

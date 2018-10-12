@@ -29,7 +29,7 @@ class ExperienceViewController: UIViewController {
     
     @IBAction func dismissExprienceVC(_ sender: UIButton) {
         globalVPlayerLabelText = "Player \(globalVRandomIndexForPlayer), choose a timeline:"
-        self.dismiss(animated: true, completion: nil)
+        performSegue(withIdentifier: "segueBackwardToMainPageVC", sender: self)
         
     }
     
@@ -45,3 +45,4 @@ class ExperienceViewController: UIViewController {
 }
 
 // Dismiss function in ExperienceVC (line 30) no longer works because of navigation controller?
+

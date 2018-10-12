@@ -31,7 +31,7 @@ class WelcomePageViewController: UIViewController {
         print(globalVPlayerNumbers)
         
         
-        performSegue(withIdentifier: "segueToMainVC", sender: self)
+        performSegue(withIdentifier: "segueForwardToMainPageVC", sender: self)
     }
     
 
