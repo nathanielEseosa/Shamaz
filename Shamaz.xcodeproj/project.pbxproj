@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE0DC92021712B2B00B3B6AC /* WelcomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0DC91F21712B2B00B3B6AC /* WelcomePageViewController.swift */; };
 		AEAFCAC8216DDEC6000D87F1 /* ExperienceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAFCAC7216DDEC6000D87F1 /* ExperienceViewController.swift */; };
 		AEAFCACA216DDF7F000D87F1 /* ExperienceBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAFCAC9216DDF7F000D87F1 /* ExperienceBank.swift */; };
 		AEBFFB3C21629A06003670F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBFFB3B21629A06003670F8 /* AppDelegate.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AE0DC91F21712B2B00B3B6AC /* WelcomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePageViewController.swift; sourceTree = "<group>"; };
 		AEAFCAC7216DDEC6000D87F1 /* ExperienceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceViewController.swift; sourceTree = "<group>"; };
 		AEAFCAC9216DDF7F000D87F1 /* ExperienceBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceBank.swift; sourceTree = "<group>"; };
 		AEBFFB3821629A06003670F8 /* Shamaz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shamaz.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,6 +64,7 @@
 				AEBFFB3D21629A06003670F8 /* MainPageViewController.swift */,
 				AEAFCAC7216DDEC6000D87F1 /* ExperienceViewController.swift */,
 				AEBFFB3F21629A06003670F8 /* Main.storyboard */,
+				AE0DC91F21712B2B00B3B6AC /* WelcomePageViewController.swift */,
 				AEAFCAC9216DDF7F000D87F1 /* ExperienceBank.swift */,
 				AEBFFB4221629A07003670F8 /* Assets.xcassets */,
 				AEBFFB4421629A07003670F8 /* LaunchScreen.storyboard */,
@@ -145,6 +148,7 @@
 				AEBFFB3E21629A06003670F8 /* MainPageViewController.swift in Sources */,
 				AEBFFB3C21629A06003670F8 /* AppDelegate.swift in Sources */,
 				AEAFCACA216DDF7F000D87F1 /* ExperienceBank.swift in Sources */,
+				AE0DC92021712B2B00B3B6AC /* WelcomePageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

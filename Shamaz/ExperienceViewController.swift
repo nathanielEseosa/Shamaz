@@ -14,11 +14,8 @@ class ExperienceViewController: UIViewController {
     
     var selectedTimeline = ""
     let experienceBankInstance = ExperienceBank()
-    let randomIndex = Int.random(in: 0...3)
+    let randomIndexForExperienceArray = Int.random(in: 0...3)
     
-
-    
-
     
     @IBOutlet weak var selectedTimelineLabel: UILabel!
     @IBOutlet weak var experienceLabel: UILabel!
@@ -30,20 +27,21 @@ class ExperienceViewController: UIViewController {
         
     }
     
-    @IBAction func dismissy(_ sender: UIButton) {
-        let randomIndexForPlayer = Int.random(in: 1...10)
-        playerLabelText = "Player \(randomIndexForPlayer), choose a timeline:"
+    @IBAction func dismissExprienceVC(_ sender: UIButton) {
+        globalVPlayerLabelText = "Player \(globalVRandomIndexForPlayer), choose a timeline:"
         self.dismiss(animated: true, completion: nil)
         
     }
     
     func generateExperience() {
         if selectedTimeline == "future" {
-            experienceLabel.text = experienceBankInstance.futureExperience[randomIndex]
+            experienceLabel.text = experienceBankInstance.futureExperience[randomIndexForExperienceArray]
         } else if selectedTimeline == "past" {
-            experienceLabel.text = experienceBankInstance.pastExperience[randomIndex]
+            experienceLabel.text = experienceBankInstance.pastExperience[randomIndexForExperienceArray]
         }
     }
     
 
 }
+
+// Dismiss function in ExperienceVC (line 30) no longer works because of navigation controller?

@@ -9,23 +9,23 @@
 import UIKit
 
 
-var playerLabelText = "Player , choose a timeline:"
-
 class MainPageViewController: UIViewController {
     
     var selectedTimeline = ""
     
-
     @IBOutlet weak var playerLabel: UILabel!
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        playerLabel.text = playerLabelText
+        let globalVRandomIndexForPlayer = Int.random(in: 1...globalVPlayerNumbers) // This runs whenever viewDidAppear. Does it override the globalVRandomIndexForPlayer in the WelcomePageVC(Line 15)
+        playerLabel.text = "Player \(globalVRandomIndexForPlayer), choose a timeline:"
+        print(globalVRandomIndexForPlayer)
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
     }
     
     
@@ -44,6 +44,7 @@ class MainPageViewController: UIViewController {
             let destinationVC = segue.destination as! ExperienceViewController
             
             destinationVC.selectedTimeline = selectedTimeline
+    
         }
     }
 
