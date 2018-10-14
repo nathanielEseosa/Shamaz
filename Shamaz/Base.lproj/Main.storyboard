@@ -43,7 +43,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="continue" textContentType="cc-number"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="continue"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="luk-an-hT9">
                                 <rect key="frame" x="118" y="420" width="138" height="33"/>
@@ -70,8 +70,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="9A1-Ui-s16"/>
                     <connections>
-                        <outlet property="playerNumbersTextField" destination="kmu-1h-wMM" id="Sr3-Bj-B4t"/>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="segueForwardToMainPageVC" id="SPA-7g-dpe"/>
+                        <outlet property="textFieldForPlayerNumber" destination="kmu-1h-wMM" id="UAt-cN-Wvo"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="segueToMainPageVC" id="SPA-7g-dpe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IWU-Qk-C5w" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -148,7 +148,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="i7g-BW-4ux"/>
                     <connections>
-                        <outlet property="playerLabel" destination="Qfa-iQ-bCD" id="TYx-lK-1hD"/>
+                        <outlet property="nextPlayerLabel" destination="Qfa-iQ-bCD" id="GUd-on-LKO"/>
                         <segue destination="DNC-cb-DOa" kind="show" identifier="segueToExperienceVC" id="ejV-4u-hgr"/>
                     </connections>
                 </viewController>
@@ -220,17 +220,15 @@
                     <connections>
                         <outlet property="experienceLabel" destination="WcQ-ah-CkA" id="dON-cI-6o7"/>
                         <outlet property="selectedTimelineLabel" destination="eyz-nP-Xnj" id="UPy-iY-LvT"/>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="segueBackwardToMainPageVC" id="hnB-Hl-15p"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vfp-1o-XmC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3921" y="58"/>
+            <point key="canvasLocation" x="3583" y="58"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="NPC-Xs-Pqp">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="e8q-3s-QSO" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jce-GV-npi" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="PVE-Pf-seC">
@@ -242,6 +240,7 @@
                         <segue destination="s1D-bB-iMI" kind="relationship" relationship="rootViewController" id="bfz-7D-NQ8"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e8q-3s-QSO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="949.60000000000002" y="58.374384236453203"/>
         </scene>
@@ -255,7 +254,4 @@
         <image name="pastFutureSignsBW1" width="541" height="593"/>
         <image name="pastSignBW1" width="354" height="106"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="hnB-Hl-15p"/>
-    </inferredMetricsTieBreakers>
 </document>

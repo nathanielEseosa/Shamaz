@@ -9,31 +9,42 @@
 import UIKit
 
 
-class MainPageViewController: UIViewController {
+class MainPageViewController: UIViewController, SetPlayerNumberLabelTextDelegate {
+    func setPlayerNumber(text: String) {
+        if useDeleagteToSetLabel {
+            nextPlayerLabel.text = text
+        }
+        
+    }
     
-    var selectedTimeline = ""
+    var useDeleagteToSetLabel = false
     
-    @IBOutlet weak var playerLabel: UILabel!
+    var timeline = ""
+    var textForNextPlayerLabel = ""
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        let globalVRandomIndexForPlayer = Int.random(in: 1...globalVPlayerNumbers) // This runs whenever viewDidAppear. Does it override the globalVRandomIndexForPlayer in the WelcomePageVC(Line 15)
-        playerLabel.text = "Player \(globalVRandomIndexForPlayer), choose a timeline:"
-        print(globalVRandomIndexForPlayer)
+    @IBOutlet weak var nextPlayerLabel: UILabel!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if !useDeleagteToSetLabel {
+            nextPlayerLabel.text = textForNextPlayerLabel
+            useDeleagteToSetLabel = true
+        }
+       
         
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
     
     @IBAction func timelineButtonPressed(_ sender: UIButton) {
         if sender.tag == 1 {
-            selectedTimeline = "future"
+            timeline = "future"
         } else if sender.tag == 2 {
-            selectedTimeline = "past"
+            timeline = "past"
         }
         performSegue(withIdentifier: "segueToExperienceVC", sender: self)
     }
@@ -43,7 +54,8 @@ class MainPageViewController: UIViewController {
         if segue.identifier == "segueToExperienceVC" {
             let destinationVC = segue.destination as! ExperienceViewController
             
-            destinationVC.selectedTimeline = selectedTimeline
+            destinationVC.selectedTimeline = timeline
+            destinationVC.delegate = self
     
         }
     }

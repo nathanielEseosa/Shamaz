@@ -8,32 +8,38 @@
 
 import UIKit
 
-//Global variables
-
-var globalVPlayerLabelText = ""
-var globalVPlayerNumbers = 0
-let globalVRandomIndexForPlayer = Int.random(in: 1...globalVPlayerNumbers) // This variable onry runs once. Where those it stays or is it overriding in MainPageVC(Line 20)?
+var globalVEnteredPlayerNumber = 0
 
 class WelcomePageViewController: UIViewController {
-
-
-    @IBOutlet weak var playerNumbersTextField: UITextField!
+    
+    var randomPlayerNumber = 0
+    
+    @IBOutlet weak var textFieldForPlayerNumber: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
     
     @IBAction func continueButtonPressed() {
+        if let enteredPlayerNumber = Int(textFieldForPlayerNumber.text!) {
+            randomPlayerNumber = Int.random(in: 1...enteredPlayerNumber)
+            globalVEnteredPlayerNumber = enteredPlayerNumber
+        } else {
+            randomPlayerNumber = 1
+            globalVEnteredPlayerNumber = 1
+        }
         
-        let playerNumbersTextFieldValue = playerNumbersTextField.text!
-        globalVPlayerNumbers = Int(playerNumbersTextFieldValue) ?? 1
-        print(globalVPlayerNumbers)
-        
-        
-        performSegue(withIdentifier: "segueForwardToMainPageVC", sender: self)
+        performSegue(withIdentifier: "segueToMainPageVC", sender: self)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "segueToMainPageVC" {
+            let destinationVC = segue.destination as! MainPageViewController
+            
+            destinationVC.textForNextPlayerLabel = "Player \(randomPlayerNumber), choose a timeline:"
+            
+        }
+    }
 
     
 

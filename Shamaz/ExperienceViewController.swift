@@ -8,9 +8,13 @@
 
 import UIKit
 
-
+protocol SetPlayerNumberLabelTextDelegate {
+    func setPlayerNumber(text: String)
+}
 
 class ExperienceViewController: UIViewController {
+    
+    var delegate: SetPlayerNumberLabelTextDelegate?
     
     var selectedTimeline = ""
     let experienceBankInstance = ExperienceBank()
@@ -28,9 +32,9 @@ class ExperienceViewController: UIViewController {
     }
     
     @IBAction func dismissExprienceVC(_ sender: UIButton) {
-        globalVPlayerLabelText = "Player \(globalVRandomIndexForPlayer), choose a timeline:"
-        performSegue(withIdentifier: "segueBackwardToMainPageVC", sender: self)
-        
+        let randomPlayerNumber = Int.random(in: 1...globalVEnteredPlayerNumber)
+        delegate?.setPlayerNumber(text: "Player \(randomPlayerNumber), choose a timeline:")
+        self.navigationController?.popViewController(animated: true)
     }
     
     func generateExperience() {
@@ -40,9 +44,4 @@ class ExperienceViewController: UIViewController {
             experienceLabel.text = experienceBankInstance.pastExperience[randomIndexForExperienceArray]
         }
     }
-    
-
 }
-
-// Dismiss function in ExperienceVC (line 30) no longer works because of navigation controller?
-
