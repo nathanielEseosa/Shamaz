@@ -8,13 +8,13 @@
 
 import UIKit
 
-protocol SetPlayerNumberLabelTextDelegate {
+protocol SetPlayerNumberLabelTextDelegate: class {
     func setPlayerNumber(text: String)
 }
 
 class ExperienceViewController: UIViewController {
     
-    var delegate: SetPlayerNumberLabelTextDelegate?
+    weak var delegate: SetPlayerNumberLabelTextDelegate?
     
     var selectedTimeline = ""
     let experienceBankInstance = ExperienceBank()
