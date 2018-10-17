@@ -34,9 +34,12 @@
                                     <constraint firstAttribute="height" constant="86" id="oIf-6s-lKx"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="luk-an-hT9">
-                                <rect key="frame" x="118" y="420" width="138" height="33"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="luk-an-hT9">
+                                <rect key="frame" x="118.66666666666669" y="416.66666666666669" width="138" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="138" id="TuA-UW-KGZ"/>
+                                    <constraint firstAttribute="height" constant="33" id="bHp-80-65g"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="24"/>
                                 <state key="normal" title="Continue" backgroundImage="emptySignRigthBW">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -77,11 +80,13 @@
                             <constraint firstItem="6zf-pM-uID" firstAttribute="top" secondItem="kCx-3Z-SKU" secondAttribute="top" id="2lJ-4R-OxW"/>
                             <constraint firstItem="xkN-Ok-Pp8" firstAttribute="leading" secondItem="kCx-3Z-SKU" secondAttribute="leading" id="3oX-yA-Zj0"/>
                             <constraint firstItem="wvu-wa-k9b" firstAttribute="leading" secondItem="kCx-3Z-SKU" secondAttribute="leading" constant="93" id="C5O-2N-poV"/>
+                            <constraint firstItem="luk-an-hT9" firstAttribute="centerX" secondItem="kCx-3Z-SKU" secondAttribute="centerX" id="Ctm-XK-i2A"/>
                             <constraint firstItem="kmu-1h-wMM" firstAttribute="centerX" secondItem="wvu-wa-k9b" secondAttribute="centerX" id="Gz5-S1-1wh"/>
                             <constraint firstItem="wVG-6U-wUX" firstAttribute="leading" secondItem="kCx-3Z-SKU" secondAttribute="leading" id="HFq-NV-OHd"/>
                             <constraint firstItem="xkN-Ok-Pp8" firstAttribute="trailing" secondItem="kCx-3Z-SKU" secondAttribute="trailing" id="Hks-Nl-uUv"/>
-                            <constraint firstItem="wvu-wa-k9b" firstAttribute="top" secondItem="Tf5-HV-LGg" secondAttribute="topMargin" constant="210" id="Jn5-CN-exZ"/>
+                            <constraint firstItem="wvu-wa-k9b" firstAttribute="top" secondItem="wVG-6U-wUX" secondAttribute="bottom" constant="35" id="MvB-uP-qyq"/>
                             <constraint firstItem="6zf-pM-uID" firstAttribute="leading" secondItem="kCx-3Z-SKU" secondAttribute="leading" id="V61-Bn-rRe"/>
+                            <constraint firstItem="luk-an-hT9" firstAttribute="top" secondItem="wvu-wa-k9b" secondAttribute="bottom" constant="32.5" id="dOY-m8-Rqe"/>
                             <constraint firstItem="kmu-1h-wMM" firstAttribute="centerY" secondItem="wvu-wa-k9b" secondAttribute="centerY" id="dsK-fE-Plr"/>
                             <constraint firstItem="kCx-3Z-SKU" firstAttribute="trailing" secondItem="wvu-wa-k9b" secondAttribute="trailing" constant="93" id="i1b-hG-gMy"/>
                             <constraint firstItem="wVG-6U-wUX" firstAttribute="top" secondItem="xkN-Ok-Pp8" secondAttribute="bottom" constant="8" id="kck-K7-dEF"/>

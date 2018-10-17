@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MainPageViewController.swift
 //  Shamaz
 //
 //  Created by Nathaniel Idahosa on 01.10.18.
@@ -8,13 +8,11 @@
 
 import UIKit
 
-
 class MainPageViewController: UIViewController, SetPlayerNumberLabelTextDelegate {
     func setPlayerNumber(text: String) {
         if useDeleagteToSetLabel {
             nextPlayerLabel.text = text
         }
-        
     }
     
     var useDeleagteToSetLabel = false
@@ -31,15 +29,8 @@ class MainPageViewController: UIViewController, SetPlayerNumberLabelTextDelegate
             nextPlayerLabel.text = textForNextPlayerLabel
             useDeleagteToSetLabel = true
         }
-       
-        
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
-    
+
     @IBAction func timelineButtonPressed(_ sender: UIButton) {
         if sender.tag == 1 {
             timeline = "future"
@@ -56,12 +47,6 @@ class MainPageViewController: UIViewController, SetPlayerNumberLabelTextDelegate
             
             destinationVC.selectedTimeline = timeline
             destinationVC.delegate = self
-    
         }
     }
-
 }
-
-
-
-
