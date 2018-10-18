@@ -10,10 +10,10 @@ import Foundation
 
 struct ExperienceBank {
     
-    let pastExperience : [String] = ["Describe your day 2 days ago",
+    let pastExperience : [String] = ["Describe your day, two days ago.",
                                      "Where did you spend Christmas last year?",
-                                     "Describe your last shopping experience",
-                                     "What was your favourtite TV Show growing up?"]
+                                     "Describe your last shopping experience.",
+                                     "What was your favourite TV Show growing up?"]
     
     
     let futureExperience : [String] = ["What would you like to be doing in a month from now?",

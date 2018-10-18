@@ -28,7 +28,6 @@ class WelcomePageViewController: UIViewController {
             randomPlayerNumber = Int.random(in: 1...enteredPlayerNumber)
             globalVEnteredPlayerNumber = enteredPlayerNumber
         } else {
-            // If the use didn't enter eny value
             randomPlayerNumber = 1
             globalVEnteredPlayerNumber = 1
         }

@@ -9,15 +9,14 @@
 import UIKit
 
 class MainPageViewController: UIViewController, SetPlayerNumberLabelTextDelegate {
-    func setPlayerNumber(text: String) {
-        if useDeleagteToSetLabel {
-            nextPlayerLabel.text = text
-        }
-    }
     
+    // This property is used to check when the protocol and delegate implementation should set the "nextPlayerLabel" label. If it is false, the "prepare for segue" method sets the label else the protocol and delegate implementation.
     var useDeleagteToSetLabel = false
     
+    // This property stores a string value ("future" or "past") depending on the timeline the player chooses
     var timeline = ""
+    
+    // This property stores the text for the "nextPlayerLabel". The property gets its value from the "prepare for segue" method in the WelcomePageViewController
     var textForNextPlayerLabel = ""
     
     @IBOutlet weak var nextPlayerLabel: UILabel!
@@ -47,6 +46,12 @@ class MainPageViewController: UIViewController, SetPlayerNumberLabelTextDelegate
             
             destinationVC.selectedTimeline = timeline
             destinationVC.delegate = self
+        }
+    }
+    
+    func setPlayerNumber(text: String) {
+        if useDeleagteToSetLabel {
+            nextPlayerLabel.text = text
         }
     }
 }
