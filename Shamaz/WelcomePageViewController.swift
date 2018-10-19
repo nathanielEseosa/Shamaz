@@ -30,11 +30,11 @@ class WelcomePageViewController: UIViewController {
                 randomPlayerNumber = Int.random(in: 1...enteredPlayerNumber)
                 globalVEnteredPlayerNumber = enteredPlayerNumber
             } else {
-                alertForInvalidEntry()
+                alertForInvalidEntries()
             }
             
         } else {
-                alertForInvalidEntry()
+                alertForInvalidEntries()
         }
         
         // Using the perfomSegue function to perfom a transition to the next view controller
@@ -51,7 +51,7 @@ class WelcomePageViewController: UIViewController {
         }
     }
     
-    func alertForInvalidEntry() {
+    func alertForInvalidEntries() {
         let alert = UIAlertController(title: "", message: "Please enter a valid (min. 2 players) player number", preferredStyle: .alert)
         let alertButton = UIAlertAction(title: "OK", style: .default, handler: nil)
         
