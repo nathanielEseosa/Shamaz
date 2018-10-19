@@ -50,9 +50,11 @@ class MainPageViewController: UIViewController, SetPlayerNumberLabelTextDelegate
         }
     }
     
+    // Delegate method
     func setPlayerNumber(text: String) {
         if useDeleagteToSetLabel {
             nextPlayerLabel.text = text
         }
     }
+    
 }
