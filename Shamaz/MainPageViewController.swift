@@ -46,6 +46,7 @@ class MainPageViewController: UIViewController, SetPlayerNumberLabelTextDelegate
             
             destinationVC.selectedTimeline = timeline
             destinationVC.delegate = self
+            destinationVC.navigationItem.hidesBackButton = true
         }
     }
     

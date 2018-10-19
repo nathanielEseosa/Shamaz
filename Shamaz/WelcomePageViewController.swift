@@ -23,13 +23,18 @@ class WelcomePageViewController: UIViewController {
     }
     
     @IBAction func continueButtonPressed() {
-        // To prevent the app from crashing, safe unwrap is used to check if the textField contains any value before.
+        // To prevent the app from crashing, safe unwrap is used to check if the textField contains any value. It also checks if the user more than one player.
+        
         if let enteredPlayerNumber = Int(textFieldForPlayerNumber.text!) {
-            randomPlayerNumber = Int.random(in: 1...enteredPlayerNumber)
-            globalVEnteredPlayerNumber = enteredPlayerNumber
+            if enteredPlayerNumber > 1 {
+                randomPlayerNumber = Int.random(in: 1...enteredPlayerNumber)
+                globalVEnteredPlayerNumber = enteredPlayerNumber
+            } else {
+                alertForInvalidEntry()
+            }
+            
         } else {
-            randomPlayerNumber = 1
-            globalVEnteredPlayerNumber = 1
+                alertForInvalidEntry()
         }
         
         // Using the perfomSegue function to perfom a transition to the next view controller
@@ -45,6 +50,15 @@ class WelcomePageViewController: UIViewController {
             
         }
     }
+    
+    func alertForInvalidEntry() {
+        let alert = UIAlertController(title: "", message: "Please enter a valid (min. 2 players) player number", preferredStyle: .alert)
+        let alertButton = UIAlertAction(title: "OK", style: .default, handler: nil)
+        
+        alert.addAction(alertButton)
+        present(alert, animated: true)
+    }
+    
 
     
 
